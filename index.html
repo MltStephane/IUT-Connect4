@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body class="bg-dark mb-2">
+
+    <div id="header" class="container bg-light p-3 mt-0 mt-lg-4 border text-center">
+        <h1 class="font-weight-light mb-0">Puissance 4</h1>
+        <small>Stéphane MULOT</small>
+    </div>
+
+
+    <div id="startGame" class="container bg-light p-3 mt-2 border">
+
+        <button id="goFast" class="btn btn-primary" style="width: 33%">Partie rapide contre l'ordinateur</button>
+        <button id="showSettings" class="btn btn-success" style="width: 33%">Partie personnalisée</button>
+        <button class="btn btn-primary" style="width: 33%" data-toggle="modal"
+            data-target=".historique">Historique</button>
+
+        <div id="gameSettings" style="display:none" class="row py-3 border">
+            <div class="form-group col-6 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="boardLines">Lignes</label><span class="ml-2" id="boardLinesValue">(4)</span>
+                <input type="range" min="6" max="18" value="6" class="custom-range rounded-0" id="boardLines">
+            </div>
+            <div class="form-group col-6 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="boardColumns">Colonnes</label><span class="ml-2"
+                    id="boardColumnsValue">(4)</span>
+                <input id="boardColumns" type="range" min="6" max="18" value="7" class="custom-range rounded-0">
+            </div>
+            <div class="form-group col-12 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="discNumberToWin">Jetons à aligner</label><span class="ml-2"
+                    id="discNumberToWinValue">(4)</span>
+                <input id="discNumberToWin" type="range" min="2" max="9" value="4" class="custom-range rounded-0">
+            </div>
+            <div class="form-group col-12 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="roundToWin">Nombre de manche</label><span class="ml-2"
+                    id="roundToWinValue">(4)</span>
+                <input id="roundToWin" type="range" min="2" max="9" value="3" class="custom-range rounded-0">
+            </div>
+            <div class="form-group col-12 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="player1Name">Nom du joueur 1</label>
+                <input type="text" id="player1Name" class="form-control">
+            </div>
+            <div class="form-group col-12 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="player2Name">Nom du joueur 1</label>
+                <input type="text" id="player2Name" class="form-control">
+            </div>
+            <div class="form-group col-12 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="roundDifficulty">Difficulté du jeu</label>
+                <select class="form-control" name="roundDifficulty" id="roundDifficulty">
+                    <option value="easy" selected>Facile</option>
+                    <option value="medium">Moyen</option>
+                    <option value="hard">Difficile</option>
+                </select>
+            </div>
+            <div class="form-group col-12 col-lg-3 mt-2 mt-lg-0">
+                <label class="mb-0" for="boardMode">Mode de jeu</label>
+                <select class="form-control" name="boardMode" id="boardMode">
+                    <option value="Local" selected>En local à 2</option>
+                    <option value="Computer">Contre l'ordinateur</option>
+                </select>
+            </div>
+            <div class="col-12 mt-3">
+                <button id="goCustom" class="newGame btn btn-outline-dark w-100 rounded-0">Nouvelle Partie</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container bg-light p-3 mt-2 border">
+        <div id="more" style="display:none">
+            <div id="informations_badges" class="btn-group w-100 mb-3 mx-auto text-center">
+                <span class="btn btn-outline-dark" id="roundNumber"></span>
+                <span class="btn btn-outline-dark" id="player1Win"></span>
+                <span class="btn btn-outline-dark" id="player2Win"></span>
+            </div>
+            <div id="winner" class="h1 text-center font-weight-light"></div>
+            <div id="informations" class="h3 text-center font-weight-light"></div>
+            <div id="playerTurn" class="h3 text-center font-weight-light"></div>
+        </div>
+
+        <div id="board" class="text-center">Aucune partie en cours..</div>
+    </div>
+
+
+
+
+    <div class="modal fade historique" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content p-3">
+                <h2>Historique des parties</h2>
+                <hr>
+                <div id="historique"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/faker.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/setup.js"></script>
+
+</body>
+
+</html>

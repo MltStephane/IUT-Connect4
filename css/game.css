@@ -1,0 +1,33 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+table {
+    margin: auto;
+    border: 1px solid black;
+}
+
+td {
+    margin: auto;
+    border: 1px solid black;
+    width: 75px;
+    text-align: center;
+}
+
+td:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+tr {
+    margin: auto;
+    border: 1px solid black;
+    height: 75px;
+}
+
+.player {
+    border-radius: 50px 50px 50px 50px;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+}
